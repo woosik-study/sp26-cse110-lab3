@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Meeting Minutes</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="CSE 110 Lab 2 meeting minutes page" />
+  </head>
+  <body>
+    <header>
+      <h1>Pomodoro Timer First Brainstorm</h1>
+      <h2>Brainstorming Meeting</h2>
+      <h3>April 14, 2026</h3>
+
+      <nav>
+        <a href="#attendance">Attendance</a><br />
+        <a href="#agenda">Agenda</a><br />
+        <a href="#unfinished">Unfinished Business</a><br />
+        <a href="#new">New Business</a><br />
+        <a href="#misc">Comments</a><br />
+        <a href="#media">Media</a><br />
+        <a href="#form">Form</a>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <section id="attendance">
+        <h2>Attendance List</h2>
+        <ul>
+          <li>Woosik Kim</li>
+        </ul>
+      </section>
+
+      <section id="agenda">
+        <h2>Agenda</h2>
+        <ol>
+          <li>Introduce the app idea</li>
+          <li>Talk about possible features</li>
+          <li>Discuss team roles</li>
+        </ol>
+      </section>
+
+      <section id="unfinished">
+        <h2>Unfinished Business</h2>
+        <p>We still need to decide the final design of the timer screen.</p>
+      </section>
+
+      <section id="new">
+        <h2>New Business</h2>
+        <p>
+          The team talked about making a <b>simple timer app</b> for students.
+          We want it to be <strong>easy to use</strong> and helpful.
+        </p>
+        <p>
+          We also discussed adding <i>study statistics</i> and
+          <em>custom break reminders</em>.
+        </p>
+
+        <div>
+          <p>This is a <span>small extra note</span> for the meeting page.</p>
+        </div>
+
+        <details>
+          <summary>Extra idea</summary>
+          <p>One idea was to let users choose their own timer length.</p>
+        </details>
+      </section>
+
+      <section id="misc">
+        <h2>Miscellaneous Comments / Questions / Concerns</h2>
+        <p>
+          Should we make the app mobile-friendly first?<br />
+          Do we want different sound options?<br />
+          Should users be able to save their settings?
+        </p>
+      </section>
+
+      <section id="media">
+        <h2>Pictures and Recordings</h2>
+
+        <p>image:</p>
+        <img
+          src="screenshots/meeting.png"
+          alt="A simple image"
+          width="300"
+        />
+
+        <p>Audio recording:</p>
+        <audio controls>
+          <source src="audio/audio.m4a" type="audio/mp4" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <p>Video recording:</p>
+        <video controls width="320">
+          <source src="video/video.mp4" type="video/mp4" />
+          Your browser does not support the video element.
+        </video>
+      </section>
+
+      <section id="form">
+        <h2>Simple Feedback Form</h2>
+        <form>
+          <fieldset>
+            <legend>Meeting Feedback</legend>
+
+            <p>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" />
+            </p>
+
+            <p>
+              <label for="date">Date:</label>
+              <input type="date" id="date" name="date" />
+            </p>
+
+            <p>Attendance (Y/N)</p>
+            <input type="radio" id="attend-yes" name="attend" value="yes" />
+            <label for="attend-yes">Yes</label>
+
+            <input type="radio" id="attend-no" name="attend" value="no" />
+            <label for="attend-no">No</label>
+
+            <p>Meeting Quality</p>
+            <input type="radio" id="good" name="rating" value="good" />
+            <label for="good">Good</label>
+
+            <input type="radio" id="bad" name="rating" value="bad" />
+            <label for="bad">Bad</label>
+
+            <p>Features you want:</p>
+            <input type="checkbox" id="music" name="music" />
+            <label for="music">music</label>
+
+            <p>
+              <label for="tool">Favorite tool:</label>
+              <input list="tools" id="tool" name="tool" />
+            </p>
+
+            <datalist id="tools">
+              <option value="VS Code"></option>
+              <option value="GitHub"></option>
+              <option value="Discord"></option>
+              <option value="Other"></option>
+            </datalist>
+
+            <p>
+              <label for="role">Preferred role:</label>
+              <select id="role" name="role">
+                <option value="developer">Developer</option>
+                <option value="designer">Designer</option>
+                <option value="tester">Tester</option>
+                <option value="other">Other</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="comments">Comments:</label><br />
+              If you selected "Other", please describe it here.<br />
+              <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+            </p>
+
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>Created for CSE 110 Lab 2_Woosik Kim</p>
+    </footer>
+  </body>
+</html>
