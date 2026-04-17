@@ -1,0 +1,412 @@
+/* ===== CSS Variables & Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-card: #21262d;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --border: #30363d;
+  --success: #3fb950;
+  --warning: #d29922;
+  --fallback-color: var(--accent, #58a6ff);
+}
+
+/* ===== Universal Selector ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Element Selector ===== */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  min-width: 320px;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--border);
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+
+header h1 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+header h2 {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+header h3 {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ===== Nav ===== */
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+
+/* ===== Pseudo-class: hover & active ===== */
+nav a:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+nav a:active {
+  background-color: var(--accent-hover);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+/* ===== Main Layout ===== */
+main {
+  max-width: 860px;
+  min-width: 280px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* ===== Section Cards ===== */
+section {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* ===== Descendant Combinator ===== */
+section h2 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== Child Combinator ===== */
+section > p {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== ID Selector ===== */
+#attendance {
+  border-left: 4px solid var(--success);
+}
+
+#agenda {
+  border-left: 4px solid var(--accent);
+}
+
+#form {
+  border-left: 4px solid var(--warning);
+}
+
+/* ===== Lists ===== */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+ul li, ol li {
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+
+/* ===== General Sibling Combinator ===== */
+h2 ~ p {
+  color: var(--text-secondary);
+}
+
+/* ===== Adjacent Sibling Combinator ===== */
+p + p {
+  margin-top: 0.5rem;
+}
+
+/* ===== Flexbox: Media Section ===== */
+#media {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+#media p {
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+/* ===== Attribute Selector ===== */
+img[width] {
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+audio[controls], video[controls] {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ===== Grid: Form Layout ===== */
+#form form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+legend {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+  grid-column: 1 / -1;
+}
+
+/* ===== Combining Two Selectors ===== */
+fieldset p {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ===== Input Styling ===== */
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  width: 100%;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+}
+
+input[type="text"]:hover,
+input[type="date"]:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--accent);
+}
+
+/* ===== Button ===== */
+button[type="submit"] {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-block;
+  grid-column: 1 / -1;
+  width: fit-content;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--accent-hover);
+}
+
+button[type="submit"]:active {
+  background-color: var(--success);
+}
+
+/* ===== Details / Summary ===== */
+details {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-top: 0.8rem;
+  background-color: var(--bg-secondary);
+}
+
+summary {
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+details p {
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* ===== Span ===== */
+span {
+  color: var(--warning);
+  font-style: italic;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+footer p {
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+
+/* ===== :has() Selector ===== */
+section:has(form) {
+  border-color: var(--warning);
+}
+
+/* ===== Nested Selectors ===== */
+nav {
+  & a {
+    letter-spacing: 0.03em;
+  }
+}
+
+/* ===== Class Selector ===== */
+.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== Selector List ===== */
+h1, h2, h3 {
+  line-height: 1.3;
+}
+
+/* ===== Wide-gamut Color ===== */
+#new {
+  border-left: 4px solid color(display-p3 0.2 0.6 1);
+}
+
+/* ===== color-mix ===== */
+#misc {
+  border-left: 4px solid color-mix(in srgb, var(--accent) 60%, var(--success) 40%);
+}
+
+/* ===== Display values ===== */
+nav a {
+  display: inline-block;
+}
+
+footer hr {
+  display: none;
+}
+
+/* ===== Position ===== */
+/* sticky already used in header */
+/* relative used here */
+section {
+  position: relative;
+}
+
+/* ===== Box Model - absolute units ===== */
+/* px, pt used in various places above */
+body {
+  margin: 0px;
+  padding: 0pt;
+}
+
+/* ===== Media Query ===== */
+@media (max-width: 600px) {
+  header {
+    position: static;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  nav {
+    gap: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+
+  fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    width: 95%;
+    margin: 1rem auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  main {
+    width: 85%;
+  }
+}
